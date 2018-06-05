@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WordRepositoryService } from './shared';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  constructor(
+    private wordRepositoryService: WordRepositoryService
+  ) {
+    console.log(this.wordRepositoryService.all());
+    // this.wordRepositoryService.word('sleep');
+  }
 }
